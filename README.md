@@ -1,6 +1,6 @@
 # ENV Guard
 
-`env-guard` is built in TypeScript and provides a simple methods for validting and exporting
+`env-guard` is built in TypeScript and provides simple methods for validating and exporting
 environment variables.
 
 `env-guard` supports the idea that **all** environment config should be validated at application
