@@ -30,13 +30,13 @@
         "prepublishOnly": "npm run clean && npm install && npm run build && npm run test && npm run lint && npm run prettier:check"
     },
     "devDependencies": {
-        "@types/jest": "^24.0.0",
-        "@types/node": "^11.0.0",
-        "jest": "^24.0.0",
-        "prettier": "1.16.4",
-        "tslint": "^5.0.0",
+        "@types/jest": "^24.0.12",
+        "@types/node": "^11.13.9",
+        "jest": "^24.7.1",
+        "prettier": "^1.17.0",
+        "tslint": "^5.16.0",
         "tslint-config-prettier": "1.18.0",
-        "typescript": "^3.0.0"
+        "typescript": "^3.4.5"
     },
     "files": [
         "build/**/*"
