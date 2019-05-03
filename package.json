@@ -1,6 +1,6 @@
 {
     "name": "env-guard",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Provides simple methods for exporting validated environment variables.",
     "keywords": [
         "env",
