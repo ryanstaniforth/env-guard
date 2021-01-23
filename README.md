@@ -41,13 +41,7 @@ export const BOOLEAN_EXAMPLE = getBooleanEnv('BOOLEAN_EXAMPLE');
 // EnvInvalidType
 // EnvInvalidPossibility
 
-console.log([
-    STRING_EXAMPLE_1,
-    STRING_EXAMPLE_2,
-    NUMBER_EXAMPLE_1,
-    NUMBER_EXAMPLE_2,
-    BOOLEAN_EXAMPLE,
-]);
+console.log([STRING_EXAMPLE_1, STRING_EXAMPLE_2, NUMBER_EXAMPLE_1, NUMBER_EXAMPLE_2, BOOLEAN_EXAMPLE]);
 ```
 
 If we attempt to run the application, it will exit at the first validation failure.

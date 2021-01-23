@@ -1,12 +1,12 @@
 import { EnvInvalidType } from '../../errors';
 import { getBooleanEnv } from '../../getBooleanEnv';
 
-describe('getBooleanEnv', () => {
-    beforeEach(() => {
+describe('getBooleanEnv', (): void => {
+    beforeEach((): void => {
         process.env = {};
     });
 
-    test('should accept true or false', () => {
+    test('should accept true or false', (): void => {
         process.env = {
             A: 'true',
             B: 'TRUE',
@@ -20,7 +20,7 @@ describe('getBooleanEnv', () => {
         expect(getBooleanEnv('D')).toBe(false);
     });
 
-    test('should throw for any invalid value', () => {
+    test('should throw for any invalid value', (): void => {
         process.env = {
             A: '',
             B: '1',
@@ -28,9 +28,9 @@ describe('getBooleanEnv', () => {
             D: 'blah',
         };
 
-        expect(() => getBooleanEnv('A')).toThrow(EnvInvalidType);
-        expect(() => getBooleanEnv('B')).toThrow(EnvInvalidType);
-        expect(() => getBooleanEnv('C')).toThrow(EnvInvalidType);
-        expect(() => getBooleanEnv('D')).toThrow(EnvInvalidType);
+        expect((): boolean => getBooleanEnv('A')).toThrow(EnvInvalidType);
+        expect((): boolean => getBooleanEnv('B')).toThrow(EnvInvalidType);
+        expect((): boolean => getBooleanEnv('C')).toThrow(EnvInvalidType);
+        expect((): boolean => getBooleanEnv('D')).toThrow(EnvInvalidType);
     });
 });

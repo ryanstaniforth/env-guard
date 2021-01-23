@@ -1,12 +1,12 @@
 import { EnvInvalidPossibility, EnvInvalidType } from '../../errors';
 import { getNumberEnv } from '../../getNumberEnv';
 
-describe('getNumberEnv', () => {
-    beforeEach(() => {
+describe('getNumberEnv', (): void => {
+    beforeEach((): void => {
         process.env = {};
     });
 
-    test('to accept any number', () => {
+    test('to accept any number', (): void => {
         process.env = {
             A: '0',
             B: '1',
@@ -26,15 +26,15 @@ describe('getNumberEnv', () => {
         expect(getNumberEnv('C', [0, 1, -1])).toBe(-1);
     });
 
-    test('to throw if invalid value given', () => {
+    test('to throw if invalid value given', (): void => {
         process.env = {
             A: '9',
         };
 
-        expect(() => getNumberEnv('A', [1, 2, 3])).toThrow(EnvInvalidPossibility);
+        expect((): number => getNumberEnv('A', [1, 2, 3])).toThrow(EnvInvalidPossibility);
     });
 
-    test('should throw for any invalid value', () => {
+    test('should throw for any invalid value', (): void => {
         process.env = {
             A: '',
             B: 'abc',
@@ -43,10 +43,10 @@ describe('getNumberEnv', () => {
             E: 'blah',
         };
 
-        expect(() => getNumberEnv('A')).toThrow(EnvInvalidType);
-        expect(() => getNumberEnv('B')).toThrow(EnvInvalidType);
-        expect(() => getNumberEnv('C')).toThrow(EnvInvalidType);
-        expect(() => getNumberEnv('D')).toThrow(EnvInvalidType);
-        expect(() => getNumberEnv('E')).toThrow(EnvInvalidType);
+        expect((): number => getNumberEnv('A')).toThrow(EnvInvalidType);
+        expect((): number => getNumberEnv('B')).toThrow(EnvInvalidType);
+        expect((): number => getNumberEnv('C')).toThrow(EnvInvalidType);
+        expect((): number => getNumberEnv('D')).toThrow(EnvInvalidType);
+        expect((): number => getNumberEnv('E')).toThrow(EnvInvalidType);
     });
 });
